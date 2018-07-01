@@ -13,7 +13,7 @@ public protocol OSInteractor {
   func openApp (_ name: String)
   func press (_ key: PressableKey)
   func type (_ text: String)
-  func hold (keys: [HoldableKey], action: ()->())
+  func whileHolding (keys: [HoldableKey], do action: ()->())
   
   // Shortcuts
   func selectAll ()
@@ -27,8 +27,8 @@ public protocol OSInteractor {
 
 // MARK: - Convenience Overloads
 extension OSInteractor {
-  public func hold (_ key: HoldableKey, action: ()->()) {
-    self.hold(keys: [key], action: action)
+  public func whileHolding (_ key: HoldableKey, do action: ()->()) {
+    self.whileHolding(keys: [key], do: action)
   }
 }
 
