@@ -10,10 +10,10 @@
 public protocol OSInteractor {
   // Primitive Interaction
   func click (at x: Double, _ y: Double)
-  func openApp (_ name: String)
-  func press (_ key: PressableKey)
   func type (_ text: String)
+  func press (_ key: PressableKey)
   func whileHolding (keys: [HoldableKey], do action: ()->())
+  func openApp (_ name: String)
   
   // Shortcuts
   func selectAll ()
